@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "86ca4d17-2d4d-4b21-a392-37018b978bbb",
+		"name": "udacity-c4-todo-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new Todo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Buy Books\",\r\n    \"dueDate\": \"2022-06-28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate URL",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/{{todoId}}/attachment",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"{{todoId}}",
+						"attachment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Todo 3\",\r\n    \"dueDate\": \"2022-06-28\",\r\n    \"done\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/{{todoId}}",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"{{todoId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos/{{todoId}}",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos",
+						"{{todoId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get todos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/todos",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiId",
+			"value": "5zz9mz01f5",
+			"type": "default"
+		},
+		{
+			"key": "authToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjFTc3Qxd0JFenRwWWlfb3gxcXg1SiJ9.eyJpc3MiOiJodHRwczovL2Rldi15Y3A2bTA5aC51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDcyNDc4MjIzNzk1MTg1NDIyNzMiLCJhdWQiOiJ4djZLek5QOVZKZEZacnJBM1hzbjBnREljcWFlTXBqMCIsImlhdCI6MTY1NjIzMTMxMywiZXhwIjoxNjU3MDk1MzEzLCJhdF9oYXNoIjoiMEc1UXlsV2lnbURPVUFmNVlZemp6QSIsIm5vbmNlIjoiWjh6cHhWZENaMnpldlZEMnU3dDdKSWk0Y1hxUHRJSkQifQ.tbLJLliVT_jywEbnnNdx5g9cPAY4F7xZexBGx5dJHhk_HunHgTPTGcAU1YqPy6p9g2aWwZwS6BSE57EM3ez0xZXaW-Ntc49CdXtaMco_HDFdxem81uKHgAGv9e2awpc3IdqPkJ3EruOaT5DeTXkPGwjYATbVqihdcV_WPXyXQmC3Tl5gS4929DkPCAxyKtx3lZ4wa1-Ubdfysjjv2TragPKq3zaqO0NnIJLYbXKdi-zaOWGqzt7LPWhixpEfaRtaFwntOW9xqwXKIOlfgePkeJYyAws891nh3CDoqQPWhbc07fLltww3r7bpKJRtEdYyHHjKxFQRTvivtfswuq-aTQ",
+			"type": "default"
+		},
+		{
+			"key": "todoId",
+			"value": "f1cde322-925f-4c22-b002-dd8e3944a49c",
+			"type": "default"
+		}
+	]
+}
